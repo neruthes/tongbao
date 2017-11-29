@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>eval.js</title>
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+        }
+        html, body {
+            font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', sans-serif;
+            font-size: 16px;
+            color: #FFF;
+            background: rgb(9, 58, 203);
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        #controls {
+            text-align: center;
+            padding: 20px 0;
+        }
+        #h1 {
+            font-size: 24px;
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        #ta, #ta:focus {
+            font-size: 16px;
+            color: #FFF;
+            background: rgb(9, 58, 203);
+            border: none;
+            outline: none;
+            resize: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 0 20px;
+            margin: 0;
+        }
+        /* ----------------- */
+        .TD-underline {
+            text-decoration: underline;
+        }
+        .CURSOR-pointer {
+            cursor: pointer;
+        }
+        </style>
+        <script>
+        var setContentAlign = function (arg1) {
+            document.getElementById('ta').style.textAlign = arg1;
+        }
+        </script>
+    </head>
+    <body>
+        <div id="controls">
+            文本对齐: <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('center')">居中</span> <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('left')">居左</span>
+        </div>
+        <div id="h1">
+             情 况 通 报
+        </div>
+        <div id="content">
+            <textarea id="ta" placeholder="在这里输入内容……" autofocus></textarea>
+        </div>
+        <script>
+        (function (guid) {
+            if (localStorage[guid]) {
+                document.getElementById('ta').value = localStorage[guid];
+            } else {
+                localStorage[guid] = document.getElementById('ta').value;
+            };
+        })('16d19fff-6e4a-4820-9dca-a76ed4d7f51b');
+        document.getElementById('run').addEventListener('click', function () {
+            eval(document.getElementById('ta').value);
+        });
+        document.getElementById('ta').addEventListener('input', function () {
+            localStorage['16d19fff-6e4a-4820-9dca-a76ed4d7f51b'] = document.getElementById('ta').value;
+        });
+        </script>
+    </body>
+</html>
