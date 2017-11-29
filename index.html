@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>eval.js</title>
+        <title>情况通报</title>
         <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,7 @@
             font-size: 16px;
         }
         html, body {
-            font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', sans-serif;
+            font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC';
             font-size: 16px;
             color: #FFF;
             background: rgb(9, 58, 203);
@@ -53,11 +53,28 @@
         var setContentAlign = function (arg1) {
             document.getElementById('ta').style.textAlign = arg1;
         }
+        var setContentFont = function (arg1) {
+            var fonts = {
+                'hei': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC'",
+                'kai': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'Kaiti SC', 'Kai', 'FandolKai', sans-serif",
+                'song': "Times, Georgia, serif, 'Songti SC', 'STSongti'",
+            }
+            document.body.style.fontFamily = fonts[arg1];
+            document.getElementById('ta').style.fontFamily = fonts[arg1];
+        };
         </script>
     </head>
     <body>
         <div id="controls">
-            文本对齐: <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('center')">居中</span> <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('left')">居左</span>
+            <div class="">
+                文本对齐: <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('center')">居中</span>
+                <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('left')">居左</span>
+            </div>
+            <div class="">
+                字体: <span class="TD-underline CURSOR-pointer" onclick="setContentFont('hei')">黑体</span>
+                <span class="TD-underline CURSOR-pointer" onclick="setContentFont('kai')">楷体</span>
+                <span class="TD-underline CURSOR-pointer" onclick="setContentFont('song')">宋体</span>
+            </div>
         </div>
         <div id="h1">
              情 况 通 报
