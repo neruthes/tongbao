@@ -17,7 +17,7 @@
             overflow: hidden;
         }
         body {
-            font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC';
+            font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif,;
         }
         #controls {
             text-align: center;
@@ -55,9 +55,9 @@
         }
         var setContentFont = function (arg1) {
             var fonts = {
-                'hei': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC'",
-                'kai': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'Kaiti SC', 'Kai', 'FandolKai', sans-serif",
-                'song': "Times, Georgia, 'Songti SC', 'STSongti', serif"
+                'hei': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC' ,'Microsoft YaHei'",
+                'kai': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'Kaiti SC', 'STKaiti', 'Kai', 'FandolKai', sans-serif",
+                'song': "Times, Georgia,'Source Serif Pro', 'Source Han Serif SC', 'Songti SC', 'STSongti', serif"
             };
             document.body.style.fontFamily = fonts[arg1];
             document.getElementById('ta').style.fontFamily = fonts[arg1];
