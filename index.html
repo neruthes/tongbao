@@ -22,7 +22,7 @@
         #controls {
             text-align: center;
             background: rgba(0, 0, 0, 0.15);
-            padding: 20px 0;
+            padding: 30px 0;
         }
         #content {
             max-width: 440px;
@@ -59,11 +59,11 @@
         }
         var setContentFont = function (arg1) {
             var fonts = {
-                'hei': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC'",
-                'kai': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'Kaiti SC', 'Kai', 'FandolKai', sans-serif",
-                'song': "Times, Georgia, 'Songti SC', 'STSongti', serif"
+                'hei': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC' ,'Microsoft YaHei'",
+                'kai': "'SF UI Text', 'Helvetica Neue', Helvetica, Arial, 'Kaiti SC', 'STKaiti', 'Kai', 'FandolKai', sans-serif",
+                'song': "Times, Georgia, serif, 'Source Serif Pro', 'Source Han Serif SC', 'Songti SC', 'STSongti'"
             };
-            document.body.style.fontFamily = fonts[arg1];
+            // document.body.style.fontFamily = fonts[arg1];
             document.getElementById('ta').style.fontFamily = fonts[arg1];
         };
         </script>
@@ -74,7 +74,7 @@
                 文本对齐: <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('center')">居中</span>
                 <span class="TD-underline CURSOR-pointer" onclick="setContentAlign('left')">居左</span>
             </div>
-            <div class="" style="display: none;">
+            <div class="" style="padding: 20px 0 0;">
                 字体: <span class="TD-underline CURSOR-pointer" onclick="setContentFont('hei')">黑体</span>
                 <span class="TD-underline CURSOR-pointer" onclick="setContentFont('kai')">楷体</span>
                 <span class="TD-underline CURSOR-pointer" onclick="setContentFont('song')">宋体</span>
